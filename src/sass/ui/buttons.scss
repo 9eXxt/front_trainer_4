@@ -1,0 +1,115 @@
+/*
+ * ========================================================================
+ * ARCHITECTURE NOTE:
+ *
+ * This button system intentionally isolates each role modifier
+ * (e.g., .btn--large, .btn--medium).
+ *
+ * There is deliberate code duplication in the pseudo-states
+ * (:hover, :active) between certain roles, like .btn--medium
+ * and .btn--small.
+ *
+ * DO NOT "DRY" OR GROUP THESE SELECTORS.
+ *
+ * This isolation is a strategic decision. It ensures that modifying
+ * one role's behavior (e.g., changing :active for .btn--small)
+ * will not accidentally break another role (.btn--medium) or
+ * force a complex refactor.
+ *
+ * This file prioritizes COMPONENT ISOLATION over academic DRY principles.
+ * ========================================================================
+ */
+
+@use "/src/sass/base/variables.scss" as v;
+@use "/src/sass/base/functions.scss" as fn;
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.2;
+  text-transform: uppercase;
+  background-color: v.$light;
+  border: 1px solid;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.btn--large {
+  font-size: 20px;
+  padding-block: fn.fluid-value(13px, 1200px, 17px, 1920px);
+  padding-inline: fn.fluid-value(66px, 1200px, 116px, 1920px);
+
+  &:hover {
+    background-color: v.$dark;
+    color: v.$light;
+  }
+
+  &:active {
+    background-color: v.$ui-active;
+    box-shadow: 0px 0px 10px 1px #00000066 inset;
+    border-color: v.$ui-active;
+  }
+
+  &:disabled {
+    border-color: v.$ui-disabled;
+    color: v.$ui-disabled;
+  }
+}
+
+.btn--medium {
+  font-size: 16px;
+  padding-block: 10px;
+  padding-inline: 55px;
+
+  &:hover {
+    border-color: v.$ceramic;
+    color: v.$ceramic;
+  }
+
+  &:active {
+    border-color: v.$ceramic;
+    color: v.$dark;
+  }
+
+  &:disabled {
+    border-color: v.$ui-disabled;
+    color: v.$ui-disabled;
+  }
+}
+
+.btn--small {
+  font-size: 14px;
+  padding-block: 7px;
+  padding-inline: 55px;
+
+  &:hover {
+    border-color: v.$ceramic;
+    color: v.$ceramic;
+  }
+
+  &:active {
+    border-color: v.$ceramic;
+    color: v.$dark;
+  }
+
+  &:disabled {
+    border-color: v.$ui-disabled;
+    color: v.$ui-disabled;
+  }
+}
+
+.btn--compact {
+  font-size: 16px;
+  padding-block: 10px;
+  padding-inline: 18px;
+
+  color: v.$light;
+  border-color: v.$light;
+
+  &:disabled {
+    border-color: v.$ui-disabled;
+    color: v.$ui-disabled;
+  }
+}

@@ -1,0 +1,38 @@
+@use "sass:math";
+
+/*
+ * Функция для расчета "плавного" значения (clamp).
+ * Она сама вычисляет "среднюю переменную".
+ *
+ * @param {Number} $min-size - Мин. значение (e.g., 32px)
+ * @param {Number} $min-vw   - Мин. ширина экрана (e.g., 360px)
+ * @param {Number} $max-size - Макс. значение (e.g., 40px)
+ * @param {Number} $max-vw   - Макс. ширина экрана (e.g., 1200px)
+ *
+ * @return {String} - Готовая строка `clamp(...)`
+*/
+@function fluid-value($min-size, $min-vw, $max-size, $max-vw) {
+  // Убедимся, что все в одинаковых единицах (лучше без единиц)
+  // Нам нужны "голые" цифры для расчетов
+  $min-size-num: math.div($min-size, $min-size * 0 + 1);
+  $max-size-num: math.div($max-size, $max-size * 0 + 1);
+  $min-vw-num: math.div($min-vw, $min-vw * 0 + 1);
+  $max-vw-num: math.div($max-vw, $max-vw * 0 + 1);
+
+  // Получаем единицы измерения (e.g., "px" или "rem")
+  $unit: math.unit($min-size);
+
+  // Формула "средней переменной"
+  $slope: math.div($max-size-num - $min-size-num, $max-vw-num - $min-vw-num);
+  $y-intercept: $min-size-num - $slope * $min-vw-num;
+
+  // Форматируем в 'rem + vw'
+  //   $preferred-value: #{$y-intercept}#{$unit} + #{$slope * 100}vw;
+
+  // Возвращаем готовый clamp()
+  @return clamp(
+    #{$min-size},
+    calc(#{$y-intercept}#{$unit} + #{$slope * 100}vw),
+    #{$max-size}
+  );
+}

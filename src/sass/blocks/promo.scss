@@ -1,0 +1,25 @@
+@use "/src/sass/base/variables.scss" as v;
+
+.promo {
+  padding-block-start: 50px;
+
+  &__title {
+    font-style: italic;
+    font-size: clamp(24px, 10.67px + 1.1111111111111112vw, 32px);
+    padding-inline: 5px;
+  }
+
+  &__img {
+    margin-block-start: 40px;
+    margin-inline: auto;
+    box-shadow: 5px 5px 10px 0px #00000040;
+    max-width: 270px;
+    max-height: 377px;
+  }
+
+  &__btn {
+    display: block;
+    margin-block: 18px;
+    margin-inline: auto;
+  }
+}

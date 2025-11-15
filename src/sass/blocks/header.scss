@@ -1,0 +1,36 @@
+@use "/src/sass/base/variables.scss" as v;
+
+.header {
+  padding-block-start: 50px;
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  &__logo {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  &__icons {
+    display: flex;
+    justify-self: end;
+    align-self: flex-start;
+    gap: 15px;
+    span {
+      display: block;
+      font-size: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  span {
+    width: 20px;
+    height: 1px;
+    background-color: v.$dark;
+  }
+}

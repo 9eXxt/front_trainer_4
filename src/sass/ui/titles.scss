@@ -1,0 +1,23 @@
+@use "/src/sass/base/variables.scss" as v;
+@use "/src/sass/base/functions.scss" as fn;
+
+.title {
+  color: v.$dark;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+
+  &--large {
+    font-size: fn.fluid-value(36px, 360px, 48px, 1200px);
+  }
+
+  &--medium {
+    font-size: fn.fluid-value(32px, 360px, 40px, 1200px);
+  }
+
+  &--small {
+    font-size: fn.fluid-value(20px, 360px, 24px, 1200px);
+  }
+}
