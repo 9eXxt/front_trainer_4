@@ -26,13 +26,13 @@
   $slope: math.div($max-size-num - $min-size-num, $max-vw-num - $min-vw-num);
   $y-intercept: $min-size-num - $slope * $min-vw-num;
 
-  // Форматируем в 'rem + vw'
-  //   $preferred-value: #{$y-intercept}#{$unit} + #{$slope * 100}vw;
+  $real-min-size: math.min($min-size, $max-size);
+  $real-max-size: math.max($min-size, $max-size);
 
   // Возвращаем готовый clamp()
   @return clamp(
-    #{$min-size},
+    #{$real-min-size},
     calc(#{$y-intercept}#{$unit} + #{$slope * 100}vw),
-    #{$max-size}
+    #{$real-max-size}
   );
 }

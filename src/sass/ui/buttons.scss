@@ -38,8 +38,10 @@
 
 .btn--large {
   font-size: 20px;
-  padding-block: fn.fluid-value(13px, 1200px, 17px, 1920px);
-  padding-inline: fn.fluid-value(66px, 1200px, 116px, 1920px);
+  //   padding-block: fn.fluid-value(13px, 1200px, 17px, 1920px);
+  //   padding-inline: fn.fluid-value(66px, 1200px, 116px, 1920px);
+  width: fn.fluid-value(230px, 1200px, 330px, 1920px);
+  min-height: fn.fluid-value(50px, 1200px, 60px, 1920px);
 
   &:hover {
     background-color: v.$dark;
@@ -60,8 +62,11 @@
 
 .btn--medium {
   font-size: 16px;
-  padding-block: 10px;
-  padding-inline: 55px;
+  //   padding-block: 10px;
+  //   padding-inline: 55px;
+
+  max-width: 220px;
+  min-height: 40px;
 
   &:hover {
     border-color: v.$ceramic;
@@ -81,8 +86,11 @@
 
 .btn--small {
   font-size: 14px;
-  padding-block: 7px;
-  padding-inline: 55px;
+  //   padding-block: 7px;
+  //   padding-inline: 55px;
+
+  max-width: 145px;
+  min-height: 32px;
 
   &:hover {
     border-color: v.$ceramic;
@@ -102,8 +110,11 @@
 
 .btn--compact {
   font-size: 16px;
-  padding-block: 10px;
-  padding-inline: 18px;
+  //   padding-block: 10px;
+  //   padding-inline: 18px;
+
+  max-width: 90px;
+  min-height: 40px;
 
   color: v.$light;
   border-color: v.$light;

@@ -39,9 +39,24 @@ html {
 
 a {
   color: $dark;
+  text-decoration: none;
 }
 
 .container {
   width: 100%;
-  padding: 0 10px;
+  padding-inline: 10px;
+
+  @media screen and (min-width: 768px) {
+    padding-inline: 0;
+    margin-inline: auto;
+    max-width: 720px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    max-width: 1440px;
+  }
 }

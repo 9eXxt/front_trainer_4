@@ -16,6 +16,7 @@
 
 <body>
 	<header class="header">
+		<img src="/src/img/header/potter.jpg" alt="potter" class="header__potter">
 		<div class="container">
 			<div class="header__items">
 				<div class="burger">
@@ -27,18 +28,30 @@
 					<img src="/src/logo/logo.png" alt="logo">
 				</a>
 				<div class="header__icons">
-					<a href="#"><span class="icon-search"></span></a>
-					<a href="#"><span class="icon-shopping-bag"></span></a>
+					<a href="#" aria-label="Search"><span class="icon-search"></span></a>
+					<a href="#" aria-label="View shopping bag"><span class="icon-shopping-bag"></span></a>
 				</div>
 			</div>
+
+			<nav class="header__nav">
+				<ul>
+					<li><a href="#" class="header__link">catalog</a></li>
+					<li><a href="#" class="header__link">blog</a></li>
+					<li><a href="#" class="header__link">about</a></li>
+				</ul>
+			</nav>
 		</div>
 	</header>
 
 	<section class="promo">
 		<div class="container">
-			<h2 class="title title--medium">Make your dream come true or decorate your home</h2>
-			<img src="/src/img/promo/ceramic-vase.jpg" alt="vase" class="promo__img">
-			<button class="btn btn--large promo__btn">shop now</button>
+			<div class="promo__wrapper">
+				<h2 class="title promo__title">Make your dream come true <br> or decorate your home</h2>
+				<div class="promo__cta">
+					<img src="/src/img/promo/ceramic-vase.jpg" alt="vase" class="promo__img">
+					<button class="btn btn--large promo__btn">shop now</button>
+				</div>
+			</div>
 		</div>
 	</section>
 	<script type="module" src="/src/js/script.js"></script>

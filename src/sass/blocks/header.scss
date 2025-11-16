@@ -1,15 +1,32 @@
 @use "/src/sass/base/variables.scss" as v;
+@use "/src/sass/base/functions.scss" as fn;
 
 .header {
-  padding-block-start: 50px;
+  padding-block-start: fn.fluid-value(50px, 1200px, 40px, 1920px);
+
+  &__potter {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: fn.fluid-value(450px, 1200px, 640px, 1920px);
+    height: auto;
+    // height: fn.fluid-value(633px, 1200px, 900px, 1920px);
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }
+  }
+
   &__items {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
   }
+
   &__logo {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: fn.fluid-value(100px, 1200px, 150px, 1920px);
+    max-height: fn.fluid-value(100px, 1200px, 150px, 1920px);
   }
+
   &__icons {
     display: flex;
     justify-self: end;
@@ -20,6 +37,31 @@
       font-size: 20px;
       height: 20px;
     }
+  }
+
+  &__nav {
+    display: none;
+    margin-block-start: fn.fluid-value(20px, 1200px, 36px, 1920px);
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+      gap: fn.fluid-value(30px, 1200px, 60px, 1920px);
+    }
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__link {
+    color: v.$dark;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.2;
+    text-transform: uppercase;
   }
 }
 
@@ -32,5 +74,9 @@
     width: 20px;
     height: 1px;
     background-color: v.$dark;
+  }
+
+  @media screen and (min-width: 768px) {
+    visibility: hidden;
   }
 }
