@@ -1,0 +1,74 @@
+@use "/src/sass/base/variables.scss" as v;
+@use "/src/sass/base/functions.scss" as fn;
+
+.activities {
+  padding-block-start: fn.fluid-value(60px, 1200px, 100px, 1920px);
+
+  &__grid {
+    margin-block-start: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @media screen and (min-width: 768px) {
+      margin-block-start: fn.fluid-value(40px, 768px, 80px, 1200px);
+    }
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto auto 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    @media screen and (min-width: 1200px) {
+      display: grid;
+      grid-template-rows: subgrid;
+
+      grid-column: span 2;
+      grid-row: span 3;
+      gap: 0;
+    }
+  }
+
+  &__card--wide {
+    @media screen and (min-width: 1200px) {
+      grid-column: span 3;
+    }
+  }
+
+  &__img {
+    margin-block-start: 40px;
+    inline-size: 100%;
+    box-shadow: 5px 5px 10px 0px #00000040;
+    object-fit: cover;
+    justify-self: center;
+    align-self: center;
+
+    @media screen and (min-width: 1200px) {
+      max-block-size: 320px;
+      margin-block-start: 60px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: fn.fluid-value(16px, 360px, 20px, 768px);
+    line-height: 1.2;
+    margin-block-start: fn.fluid-value(20px, 360px, 25px, 768px);
+    text-align: start;
+    align-self: start;
+
+    &--ceramic {
+      color: v.$ceramic;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-block-start: fn.fluid-value(20px, 1200px, 30px, 1920px);
+      &--fixed {
+        inline-size: 556px;
+      }
+    }
+  }
+}

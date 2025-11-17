@@ -9,9 +9,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    max-width: fn.fluid-value(450px, 1200px, 640px, 1920px);
-    height: auto;
-    // height: fn.fluid-value(633px, 1200px, 900px, 1920px);
+    max-inline-size: fn.fluid-value(450px, 1200px, 640px, 1920px);
     @media screen and (min-width: 1200px) {
       display: block;
     }
@@ -23,8 +21,8 @@
   }
 
   &__logo {
-    max-width: fn.fluid-value(100px, 1200px, 150px, 1920px);
-    max-height: fn.fluid-value(100px, 1200px, 150px, 1920px);
+    max-inline-size: fn.fluid-value(100px, 1200px, 150px, 1920px);
+    max-block-size: fn.fluid-value(100px, 1200px, 150px, 1920px);
   }
 
   &__icons {

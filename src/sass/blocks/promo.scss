@@ -23,7 +23,7 @@
     @media screen and (min-width: 768px) {
       margin-block-start: fn.fluid-value(250px, 1200px, 384px, 1920px);
       padding-inline: 0;
-      text-align: left;
+      text-align: start;
     }
   }
 
@@ -31,12 +31,10 @@
     margin-block-start: 40px;
     margin-inline: auto;
     box-shadow: 5px 5px 10px 0px #00000040;
-    max-width: 270px;
-    height: auto;
+    max-inline-size: 270px;
     @media screen and (min-width: 768px) {
       margin-block-start: 0;
-      max-width: fn.fluid-value(230px, 1200px, 330px, 1920px);
-      //   height: fn.fluid-value(321px, 1200px, 460px, 1920px);
+      max-inline-size: fn.fluid-value(230px, 1200px, 330px, 1920px);
     }
   }
 
