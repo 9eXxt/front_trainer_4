@@ -1,0 +1,86 @@
+@use "../base/variables" as v;
+@use "../base/functions" as fn;
+
+.form {
+  font-weight: 400;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  align-items: stretch;
+
+  &__fields {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 1fr;
+    gap: 8px 45px;
+    justify-items: center;
+
+    @media screen and (min-width: 768px) {
+      justify-items: start;
+    }
+
+    @media screen and (min-width: 1920px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    inline-size: 100%;
+    max-inline-size: fn.fluid-value(340px, 360px, 300px, 768px);
+  }
+
+  &__input,
+  &__textarea {
+    border-radius: 2px;
+    padding-inline: 15px;
+    padding-block: 10px;
+    border: 1px solid #e2e1e5;
+
+    transition: all 0.3s ease;
+
+    &:focus,
+    &:hover {
+      border: 1px solid v.$dark;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+  }
+
+  &__agreement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 7px;
+    margin-block: 20px;
+    cursor: pointer;
+
+    a {
+      color: #a22dc6;
+    }
+
+    @media screen and (min-width: 768px) {
+      justify-content: start;
+    }
+  }
+
+  &__checkbox {
+    inline-size: 15px;
+    block-size: 15px;
+  }
+
+  button {
+    margin-inline: auto;
+
+    @media screen and (min-width: 768px) {
+      margin-inline: 0;
+    }
+  }
+}

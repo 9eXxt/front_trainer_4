@@ -1,4 +1,4 @@
-@use "/src/sass/base/variables.scss" as *;
+@use "../base/variables.scss" as *;
 
 h1,
 h2,
@@ -45,6 +45,7 @@ a {
 .container {
   inline-size: 100%;
   padding-inline: 10px;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     padding-inline: 0;

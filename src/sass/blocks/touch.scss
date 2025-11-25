@@ -1,0 +1,41 @@
+@use "../base/variables.scss" as v;
+@use "../base/functions.scss" as fn;
+
+.touch {
+  padding-block-start: 60px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: fn.fluid-value(40px, 1200px, 147px, 1920px);
+    margin-block-start: 59px;
+
+    @media screen and (min-width: 768px) {
+      margin-block-start: fn.fluid-value(45px, 768px, 80px, 1920px);
+    }
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__img {
+    display: none;
+    justify-self: stretch;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px 0px #00000040;
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+}
