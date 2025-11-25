@@ -1,0 +1,62 @@
+@use "../base/variables.scss" as v;
+@use "../base/functions.scss" as fn;
+
+.works {
+  padding-block: fn.fluid_value(60px, 1200px, 100px, 1920px);
+
+  &__wrapper {
+    margin-block-start: fn.fluid_value(40px, 360px, 80px, 1200px);
+    position: relative;
+  }
+
+  &__slider {
+    img {
+      inline-size: 100%;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-inline: fn.fluid_value(40px, 1200px, 85px, 1920px);
+    }
+  }
+
+  .swiper-pagination {
+    bottom: fn.fluid_value(-30px, 768px, -25px, 1200px);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .swiper-pagination-bullet {
+    opacity: 1;
+    border-radius: 0;
+    width: 10px;
+    height: 10px;
+    margin: 0;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: v.$ceramic;
+  }
+
+  .works__slider-nav {
+    display: none;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    cursor: pointer;
+
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }
+  }
+
+  .icon-left-open {
+    left: fn.fluid_value(16px, 1200px, 42px, 1920px);
+  }
+  .icon-right-open {
+    right: fn.fluid_value(16px, 1200px, 42px, 1920px);
+  }
+}
