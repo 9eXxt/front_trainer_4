@@ -29,10 +29,17 @@
   $real-min-size: math.min($min-size, $max-size);
   $real-max-size: math.max($min-size, $max-size);
 
+  $vw-part: #{$slope * 100}vw;
+
+  $preferred-value: "";
+
+  @if $y-intercept == 0 {
+    $preferred-value: #{$vw-part};
+  } @else {
+    // Если число отрицательное или положительное, calc сам разберется со знаком
+    $preferred-value: calc(#{$y-intercept}#{$unit} + #{$vw-part});
+  }
+
   // Возвращаем готовый clamp()
-  @return clamp(
-    #{$real-min-size},
-    calc(#{$y-intercept}#{$unit} + #{$slope * 100}vw),
-    #{$real-max-size}
-  );
+  @return clamp(#{$real-min-size}, #{$preferred-value}, #{$real-max-size});
 }

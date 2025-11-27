@@ -20,4 +20,7 @@
   &--small {
     font-size: fn.fluid-value(20px, 360px, 24px, 1200px);
   }
+  &--xsmall {
+    font-size: 16px;
+  }
 }

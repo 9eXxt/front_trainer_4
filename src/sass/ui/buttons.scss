@@ -109,6 +109,17 @@
 
   color: v.$light;
   border-color: v.$light;
+  background-color: transparent;
+
+  &:hover {
+    border-color: v.$ceramic;
+    color: v.$ceramic;
+  }
+
+  &:active {
+    border-color: v.$ceramic;
+    color: v.$dark;
+  }
 
   &:disabled {
     border-color: v.$ui-disabled;

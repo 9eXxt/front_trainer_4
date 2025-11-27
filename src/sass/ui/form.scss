@@ -50,30 +50,60 @@
     }
   }
 
+  &__input--black {
+    background-color: transparent;
+    border: none;
+    padding-bottom: 15px;
+    border-bottom: 1px solid v.$ui-active;
+    color: v.$light;
+
+    transition: all 0.3s ease;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-bottom-color: v.$ceramic;
+    }
+  }
+
   &__textarea {
     resize: vertical;
+    min-block-size: 132px;
+    max-block-size: 250px;
   }
 
   &__agreement {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 0 7px;
     margin-block: 20px;
     cursor: pointer;
+
+    width: fit-content;
+    align-self: center;
 
     a {
       color: #a22dc6;
     }
 
     @media screen and (min-width: 768px) {
-      justify-content: start;
+      align-self: flex-start;
+    }
+
+    &--black {
+      color: v.$light;
     }
   }
 
   &__checkbox {
     inline-size: 15px;
     block-size: 15px;
+    accent-color: v.$ceramic;
+    cursor: pointer;
+
+    &--black {
+      color: v.$light;
+    }
   }
 
   button {

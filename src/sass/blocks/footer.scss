@@ -1,0 +1,92 @@
+@use "../base/variables" as v;
+@use "../base/functions" as fn;
+
+.footer {
+  background-color: v.$dark;
+  padding-block-start: fn.fluid-value(50px, 1200px, 80px, 1920px);
+  padding-block-end: 50px;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: fn.fluid-value(161px, 1200px, 314px, 1920px);
+    row-gap: 40px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: v.$light;
+    text-align: start;
+  }
+  &-form {
+    &__label {
+      font-weight: 400;
+      color: v.$light;
+      margin-block: 40px;
+    }
+
+    &__agreement {
+      align-self: flex-start;
+    }
+  }
+
+  &-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 66px;
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0;
+    }
+
+    &__item {
+      list-style: none;
+    }
+
+    &__link {
+      color: v.$light;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__logos {
+    display: flex;
+    gap: 10px;
+    span {
+      color: v.$light;
+      font-size: 24px;
+      max-width: 24px;
+    }
+  }
+
+  &__copyright {
+    color: v.$light;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    margin-block-start: fn.fluid-value(40px, 768px, 50px, 1200px);
+
+    @media screen and (min-width: 1200px) {
+      margin-block-start: fn.fluid-value(50px, 1200px, 18px, 1920px);
+    }
+  }
+}
