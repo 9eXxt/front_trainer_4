@@ -62,3 +62,11 @@ a {
   //   max-inline-size: 1440px;
   // }
 }
+
+/* Запрещает прокрутку страницы, когда открыто меню */
+.no-scroll {
+  // overflow: hidden;
+  overflow: hidden !important;
+  height: 100vh; // Фикс для iOS Safari
+  // touch-action: none; // Запрет жестов прокрутки
+}
