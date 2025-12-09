@@ -1,0 +1,6 @@
+@use "../base/variables" as v;
+@use "../base/functions" as fn;
+
+.catalog {
+  padding-block: fn.fluid-value(60px, 1200px, 100px, 1920px);
+}

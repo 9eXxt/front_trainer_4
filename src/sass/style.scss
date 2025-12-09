@@ -6,10 +6,14 @@
 @use "./ui/titles.scss";
 @use "./ui/buttons.scss";
 @use "./ui/form.scss";
+@use "./blocks/products-view.scss";
 
 @use "./blocks/header.scss";
+@use "./blocks/footer.scss";
+
 @use "./blocks/promo.scss";
 @use "./blocks/activities.scss";
 @use "./blocks/touch.scss";
 @use "./blocks/works.scss";
-@use "./blocks/footer.scss";
+
+@use "./blocks/catalog.scss";
