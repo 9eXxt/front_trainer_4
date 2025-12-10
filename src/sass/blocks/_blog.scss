@@ -1,0 +1,20 @@
+@use "../base/variables.scss" as v;
+@use "../base/functions.scss" as fn;
+
+.blog {
+  padding-block: fn.fluid-value(60px, 1200px, 100px, 1920px);
+
+  &__title {
+    margin-block-end: 60px;
+  }
+
+  &__content {
+    display: block;
+    column-count: 1;
+    column-gap: 40px;
+    margin-block-end: -50px;
+    @media screen and (min-width: 1200px) {
+      column-count: 2;
+    }
+  }
+}

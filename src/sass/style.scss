@@ -7,6 +7,8 @@
 @use "./ui/buttons.scss";
 @use "./ui/form.scss";
 @use "./blocks/products-view.scss";
+@use "./blocks/product-card.scss";
+@use "./blocks/blog-card";
 
 @use "./blocks/header.scss";
 @use "./blocks/footer.scss";
@@ -17,3 +19,5 @@
 @use "./blocks/works.scss";
 
 @use "./blocks/catalog.scss";
+
+@use "./blocks/blog.scss";

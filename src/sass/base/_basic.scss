@@ -38,6 +38,16 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
 a {
   color: $dark;
   text-decoration: none;
@@ -63,10 +73,7 @@ a {
   // }
 }
 
-/* Запрещает прокрутку страницы, когда открыто меню */
 .no-scroll {
-  // overflow: hidden;
   overflow: hidden !important;
-  height: 100vh; // Фикс для iOS Safari
-  // touch-action: none; // Запрет жестов прокрутки
+  height: 100vh;
 }
