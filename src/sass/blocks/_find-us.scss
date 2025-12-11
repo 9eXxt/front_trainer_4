@@ -1,0 +1,19 @@
+@use "../base/variables.scss" as v;
+@use "../base/functions.scss" as fn;
+
+.find-us {
+  padding-block: fn.fluid-value(60px, 1200px, 100px, 1920px);
+
+  &__map {
+    display: block;
+    margin-block-start: fn.fluid-value(60px, 1200px, 80px, 1920px);
+    margin-inline: auto;
+    iframe {
+      display: block;
+      margin-inline: auto;
+      max-width: 800px;
+      width: 100%;
+      aspect-ratio: 800 / 605;
+    }
+  }
+}

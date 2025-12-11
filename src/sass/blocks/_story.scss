@@ -1,0 +1,32 @@
+@use "../base/variables.scss" as v;
+@use "../base/functions.scss" as fn;
+
+.story {
+  padding-block-start: fn.fluid-value(60px, 1200px, 100px, 1920px);
+
+  &__content {
+    margin-block-start: fn.fluid-value(60px, 1200px, 100px, 1920px);
+    display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 35px 20px;
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    box-shadow: 5px 5px 10px 0px #00000040;
+  }
+
+  &__descr {
+    font-size: fn.fluid-value(16px, 1200px, 20px, 1920px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}

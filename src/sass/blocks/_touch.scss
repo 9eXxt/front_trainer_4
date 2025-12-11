@@ -2,7 +2,7 @@
 @use "../base/functions.scss" as fn;
 
 .touch {
-  padding-block-start: 60px;
+  padding-block-start: fn.fluid-value(60px, 1200px, 100px, 1920px);
 
   &__grid {
     display: grid;
