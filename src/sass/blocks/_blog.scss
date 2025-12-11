@@ -13,6 +13,33 @@
     column-count: 1;
     column-gap: 40px;
     margin-block-end: -50px;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      padding-inline: 25px;
+      padding-block-start: 25px;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        background-color: v.$dark;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &::before {
+        height: 1px;
+        width: 220px;
+      }
+
+      &::after {
+        height: 220px;
+        width: 1px;
+      }
+    }
+
     @media screen and (min-width: 1200px) {
       column-count: 2;
     }
