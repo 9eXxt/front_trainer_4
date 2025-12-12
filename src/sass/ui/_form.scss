@@ -1,5 +1,6 @@
 @use "../base/variables" as v;
 @use "../base/functions" as fn;
+@use "../base/mixins" as m;
 
 .form {
   font-weight: 400;
@@ -48,6 +49,12 @@
     &:hover {
       border: 1px solid v.$dark;
     }
+
+    &.is-invalid {
+      border: 1px solid v.$ui-error;
+    }
+
+    @include m.autofill(#fff, v.$dark);
   }
 
   &__input--black {
@@ -64,6 +71,13 @@
       outline: none;
       border-bottom-color: v.$ceramic;
     }
+
+    &.is-invalid {
+      color: v.$ui-error;
+      border-bottom: 1px solid v.$ui-error; // Красим только низ
+    }
+
+    @include m.autofill(v.$dark, v.$light);
   }
 
   &__textarea {
@@ -76,7 +90,7 @@
     display: flex;
     align-items: center;
     gap: 0 7px;
-    margin-block: 20px;
+    margin-block-start: 20px;
     cursor: pointer;
 
     width: fit-content;
@@ -104,13 +118,26 @@
     &--black {
       color: v.$light;
     }
+
+    &.is-invalid {
+      outline: 2px solid v.$ui-error;
+      outline-offset: 2px;
+    }
   }
 
-  button {
+  &__btn {
     margin-inline: auto;
-
+    margin-block-start: 20px;
     @media screen and (min-width: 768px) {
       margin-inline: 0;
     }
+  }
+
+  &__error-msg {
+    color: v.$ui-error;
+    font-size: 12px;
+    margin-block: 4px;
+    font-weight: 500;
+    animation: fade-in 0.3s ease forwards;
   }
 }
