@@ -123,46 +123,52 @@ function getCustomMessage(input) {
 // --- DOM ХЕЛПЕРЫ ---
 
 function getErrorTarget(input) {
-  // Приоритет 1: Обертка поля
-  const fieldWrapper = input.closest(".form__field");
-  if (fieldWrapper) return fieldWrapper;
-
-  // Приоритет 2: Обертка Label (специфично для чекбоксов)
-  if (input.type === "checkbox") {
-    const labelWrapper = input.closest("label");
-    if (labelWrapper) return labelWrapper;
-  }
-
-  // Приоритет 3: Сам инпут (fallback)
-  return input;
+  // Best Practice: Всегда ищем стабильную обертку компонента
+  // В твоем HTML это .form__field для всех типов полей (включая чекбокс)
+  return input.closest(".form__field");
 }
 
 function showError(input, message) {
+  const container = getErrorTarget(input);
+  if (!container) return; // Защита если верстка поменяется
+
   input.classList.add("is-invalid");
   input.setAttribute("aria-invalid", "true");
 
-  const target = getErrorTarget(input);
+  // Ищем уже существующую ошибку внутри контейнера
+  let errorElement = container.querySelector(".form__error-msg");
 
-  // Ищем ошибку только у непосредственного соседа, чтобы не удалить что-то лишнее
-  let errorElement = target.nextElementSibling;
-
-  if (!errorElement || !errorElement.classList.contains("form__error-msg")) {
+  if (!errorElement) {
     errorElement = document.createElement("div");
     errorElement.className = "form__error-msg";
-    target.after(errorElement);
+
+    // A11Y (Доступность): Генерируем ID для связки
+    // Используем id инпута или создаем случайный
+    const errorId =
+      (input.id || Math.random().toString(36).substr(2, 9)) + "-error";
+    errorElement.id = errorId;
+
+    // Связываем инпут с описанием ошибки
+    input.setAttribute("aria-describedby", errorId);
+
+    // ВАЖНО: Вставляем ВНУТРЬ контейнера, в самый конец
+    container.appendChild(errorElement);
   }
 
   errorElement.textContent = message;
 }
 
 function clearError(input) {
+  const container = getErrorTarget(input);
+  if (!container) return;
+
   input.classList.remove("is-invalid");
   input.removeAttribute("aria-invalid");
+  input.removeAttribute("aria-describedby"); // Убираем связку
 
-  const target = getErrorTarget(input);
-  const errorElement = target.nextElementSibling;
-
-  if (errorElement && errorElement.classList.contains("form__error-msg")) {
+  // Ищем ошибку ВНУТРИ контейнера и удаляем
+  const errorElement = container.querySelector(".form__error-msg");
+  if (errorElement) {
     errorElement.remove();
   }
 }

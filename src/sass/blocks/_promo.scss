@@ -4,11 +4,26 @@
 .promo {
   padding-block-start: fn.fluid-value(50px, 1200px, 79px, 1920px);
 
+  min-height: calc(100dvh - var(--header-h));
+  display: flex;
+
+  @media screen and (min-width: 768px) {
+    padding-block-start: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
   &__wrapper {
     @media screen and (min-width: 768px) {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
       gap: 90px;
+      height: 100%;
     }
     @media screen and (min-width: 1200px) {
       gap: fn.fluid-value(10px, 1200px, 30px, 1920px);
@@ -19,12 +34,16 @@
     font-style: italic;
     font-size: fn.fluid-value(24px, 1200px, 32px, 1920px);
     padding-inline: 5px;
-
+    animation: 1s slideInTop ease-in-out;
     @media screen and (min-width: 768px) {
       margin-block-start: fn.fluid-value(250px, 1200px, 384px, 1920px);
       padding-inline: 0;
       text-align: start;
     }
+  }
+
+  &__cta {
+    animation: 1s slideInRight ease-in-out;
   }
 
   &__img {

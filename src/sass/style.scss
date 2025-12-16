@@ -2,6 +2,8 @@
 @use "./libs/modern-normalize.min.css";
 
 @use "./base/basic.scss";
+@use "./base/animations";
+@use "./base/utilities";
 
 @use "./ui/titles.scss";
 @use "./ui/buttons.scss";

@@ -58,10 +58,10 @@
 
 		<section class="activities">
 			<div class="container">
-				<h2 class="title title--medium">create or buy</h2>
+				<h2 class="title title--medium activities__title">create or buy</h2>
 				<div class="activities__grid">
 					<div class="activities__card">
-						<h3 class="title title--small">our store</h3>
+						<h3 class="title title--small activities__title-card">our store</h3>
 						<img src="/src/img/activities/store.jpg" alt="store" class="activities__img">
 						<div class="activities__text">
 							Welcome to <span class="activities__text--ceramic">Ceramic Soul</span>, where each piece
@@ -73,7 +73,7 @@
 						</div>
 					</div>
 					<div class="activities__card activities__card--wide">
-						<h3 class="title title--small">our workshop</h3>
+						<h3 class="title title--small activities__title-card">our workshop</h3>
 						<img src="/src/img/activities/ceramic.jpg" alt="ceramic" class="activities__img">
 						<div class="activities__text activities__text--fixed">
 							At <span class="activities__text--ceramic">Ceramic Soul</span> workshop, we don’t just craft
@@ -90,41 +90,40 @@
 
 		<section class="touch">
 			<div class="container">
-				<h2 class="title title--medium">get in touch</h2>
+				<h2 class="title title--medium touch__title">get in touch</h2>
 				<div class="touch__grid">
 					<img src="/src/img/form/tea.jpg" alt="tea img" class="touch__img">
 
-					<form action="#" class="form">
+					<form action="#" class="form touch__form">
 						<div class="form__fields">
-							<div class="form__field">
+							<div class="form__field touch__field">
 								<label for="name" class="form__label">Name</label>
 								<input required type="text" id="name" name="name" placeholder="Name"
 									class="form__input">
 							</div>
-							<div class="form__field">
+							<div class="form__field touch__field">
 								<label for="email" class="form__label">Email</label>
 								<input required type="email" name="email" id="email" placeholder="Email"
 									class="form__input">
 							</div>
 
-							<div class="form__field">
+							<div class="form__field touch__field">
 								<label for="question" class="form__label">Your question</label>
 								<textarea name="question" id="question" placeholder="Question"
 									class="form__textarea"></textarea>
 							</div>
-
-							<div class="form__field">
-
-								<label for="checkbox" class="form__agreement">
-									<input required type="checkbox" id="checkbox" name="checkbox"
-										class="form__checkbox">
-									<div class="form__agreement-text">
-										I agree with the <a href="#">terms</a>
-									</div>
-								</label>
-							</div>
 						</div>
-						<button type="submit" class="btn btn--medium form__btn">Send request</button>
+
+						<div class="form__field touch__field">
+
+							<label for="checkbox" class="form__agreement">
+								<input required type="checkbox" id="checkbox" name="checkbox" class="form__checkbox">
+								<div class="form__agreement-text">
+									I agree with the <a href="#">terms</a>
+								</div>
+							</label>
+						</div>
+						<button type="submit" class="btn btn--medium form__btn touch__btn">Send request</button>
 					</form>
 
 					<img src="/src/img/form/vase.png" alt="vase img" class="touch__icon">

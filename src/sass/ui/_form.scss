@@ -30,10 +30,15 @@
   &__field {
     display: flex;
     flex-direction: column;
+    align-self: center;
     gap: 5px;
 
     inline-size: 100%;
     max-inline-size: fn.fluid-value(340px, 360px, 300px, 768px);
+
+    @media screen and (min-width: 768px) {
+      align-self: flex-start;
+    }
   }
 
   &__input,
@@ -94,14 +99,9 @@
     cursor: pointer;
 
     width: fit-content;
-    align-self: center;
 
     a {
       color: #a22dc6;
-    }
-
-    @media screen and (min-width: 768px) {
-      align-self: flex-start;
     }
 
     &--black {

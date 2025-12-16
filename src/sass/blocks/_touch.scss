@@ -4,6 +4,18 @@
 .touch {
   padding-block-start: fn.fluid-value(60px, 1200px, 100px, 1920px);
 
+  // scroll-snap-align: center;
+  // scroll-snap-stop: always;
+
+  view-timeline-name: --touch-scroll;
+  view-timeline-axis: block;
+
+  &__title {
+    animation: slideInBottom linear both;
+    animation-timeline: --touch-scroll;
+    animation-range: entry 0% cover 40%;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -20,22 +32,48 @@
 
   &__img {
     display: none;
-    justify-self: stretch;
-    object-fit: cover;
-    box-shadow: 5px 5px 10px 0px #00000040;
     @media screen and (min-width: 1200px) {
       display: block;
+      justify-self: stretch;
+      object-fit: cover;
+      box-shadow: 5px 5px 10px 0px #00000040;
+
+      animation: slideInLeft linear both;
+      animation-timeline: --touch-scroll;
+      animation-range: entry 5% cover 40%;
     }
+  }
+
+  &__form {
+    // animation: slideInBottom linear both;
+    animation-timeline: --touch-scroll;
+    animation-range: entry 0% cover 40%;
+  }
+
+  &__field {
+    animation: slideInBottom linear both;
+    animation-timeline: --touch-scroll;
+    animation-range: entry 5% cover 40%;
   }
 
   &__icon {
     display: none;
-    position: absolute;
-    inset-block-end: 0;
-    inset-inline-end: 0;
 
     @media screen and (min-width: 768px) {
       display: block;
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline-end: 0;
+
+      animation: slideInRight linear both;
+      animation-timeline: --touch-scroll;
+      animation-range: entry 30% cover 40%;
     }
+  }
+
+  &__btn {
+    animation: slideInRight linear both;
+    animation-timeline: --touch-scroll;
+    animation-range: entry 20% cover 40%;
   }
 }

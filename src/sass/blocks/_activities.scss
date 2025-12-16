@@ -4,6 +4,17 @@
 .activities {
   padding-block-start: fn.fluid-value(60px, 1200px, 100px, 1920px);
 
+  view-timeline-name: --activities-scroll;
+  view-timeline-axis: block;
+
+  // scroll-snap-align: center;
+  // scroll-snap-stop: always;
+
+  &__title {
+    animation: slideInBottom linear both;
+    animation-timeline: --activities-scroll;
+    animation-range: entry 0% cover 40%;
+  }
   &__grid {
     margin-block-start: 20px;
 
@@ -22,6 +33,10 @@
   }
 
   &__card {
+    // animation: slideInBottom linear both;
+    animation-timeline: --activities-scroll;
+    // animation-range: entry 5% cover 40%;
+
     @media screen and (min-width: 1200px) {
       display: grid;
       grid-template-rows: subgrid;
@@ -38,6 +53,12 @@
     }
   }
 
+  &__title-card {
+    animation: slideInBottom linear both;
+    animation-timeline: --activities-scroll;
+    animation-range: entry 5% cover 40%;
+  }
+
   &__img {
     margin-block-start: 40px;
     inline-size: 100%;
@@ -45,6 +66,11 @@
     object-fit: cover;
     justify-self: center;
     align-self: center;
+    z-index: 1;
+
+    animation: slideInBottom linear both;
+    animation-timeline: --activities-scroll;
+    animation-range: entry 10% cover 40%;
 
     @media screen and (min-width: 1200px) {
       max-block-size: 320px;
@@ -59,6 +85,10 @@
     margin-block-start: fn.fluid-value(20px, 360px, 25px, 768px);
     text-align: start;
     align-self: start;
+
+    animation: slideInBottom linear both;
+    animation-timeline: --activities-scroll;
+    animation-range: entry 15% cover 40%;
 
     &--ceramic {
       color: v.$ceramic;

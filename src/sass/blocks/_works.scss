@@ -4,6 +4,9 @@
 .works {
   padding-block: fn.fluid_value(60px, 1200px, 100px, 1920px);
 
+  // scroll-snap-align: center;
+  // scroll-snap-stop: always;
+
   &__wrapper {
     margin-block-start: fn.fluid_value(40px, 360px, 80px, 1200px);
     position: relative;
