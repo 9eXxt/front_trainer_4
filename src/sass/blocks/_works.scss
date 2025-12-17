@@ -1,15 +1,21 @@
 @use "../base/variables.scss" as v;
 @use "../base/functions.scss" as fn;
+@use "../base/mixins" as m;
 
 .works {
   padding-block: fn.fluid_value(60px, 1200px, 100px, 1920px);
 
-  // scroll-snap-align: center;
-  // scroll-snap-stop: always;
+  view-timeline-name: --works-scroll;
+  view-timeline-axis: block;
+
+  &__title {
+    @include m.scroll-anim(slideInBottom, --works-scroll, 0%, 30%);
+  }
 
   &__wrapper {
     margin-block-start: fn.fluid_value(40px, 360px, 80px, 1200px);
     position: relative;
+    @include m.scroll-anim(slideInBottom, --works-scroll, 0%, 30%);
   }
 
   &__slider {

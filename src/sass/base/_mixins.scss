@@ -9,3 +9,18 @@
     transition: background-color 5000s ease-in-out 0s;
   }
 }
+
+@mixin scroll-anim(
+  $name,
+  $timeline: view(),
+  $start: 0%,
+  $end: 30%,
+  $easing: linear
+) {
+  animation-name: $name;
+  animation-timing-function: $easing;
+  animation-fill-mode: both;
+
+  animation-timeline: $timeline;
+  animation-range: entry $start cover $end;
+}
