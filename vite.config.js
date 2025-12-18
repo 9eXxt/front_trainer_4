@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  base: "/front_trainer_4/",
   build: {
     rollupOptions: {
       input: {
